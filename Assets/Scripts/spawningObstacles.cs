@@ -70,28 +70,32 @@ public class spawningObstacles : MonoBehaviour
 
         float spawnTimer = 0;
         int nextAction = Random.Range(0, totalChance);
+        GameObject obstacle;
 
         if(nextAction < eventsToSpawn[0]){
 
             int trackSpawn = Random.Range(0, 3);
             int rock = Random.Range(0, smallObstacle.Count);
-            Instantiate(smallObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island); 
+            obstacle = Instantiate(smallObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island); 
 
             spawnTimer = Random.Range(baseSpawnTimer * .5f, baseSpawnTimer * 1.5f);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
 
         }
 
         else if(nextAction < eventsToSpawn[1]){
             int trackSpawn = Random.Range(3, 5);
             int rock = Random.Range(0, mediumObstacle.Count);
-            Instantiate(mediumObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island);
+            obstacle = Instantiate(mediumObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island);
 
             spawnTimer = Random.Range(baseSpawnTimer * 1.5f, baseSpawnTimer * 3f);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
         }
 
         else if(nextAction < eventsToSpawn[2]){
-            Instantiate(bigObstacle[0], spawnLocations[5].position, Quaternion.identity, island);
+            obstacle = Instantiate(bigObstacle[0], spawnLocations[5].position, Quaternion.identity, island);
             spawnTimer = Random.Range(baseSpawnTimer * 2f, baseSpawnTimer * 4f);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
         }
 
 
