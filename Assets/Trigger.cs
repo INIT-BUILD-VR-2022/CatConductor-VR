@@ -5,8 +5,8 @@ public class Furnace : MonoBehaviour
 {
     public float burnTime = 10f; // Time in seconds the furnace burns with each coal
 
-    private float currentBurnTime = 0f;
-    private bool isBurning = false;
+    public float currentBurnTime = 0f;
+    public bool isBurning = false;
 
     void Start()
     {
@@ -26,15 +26,16 @@ public class Furnace : MonoBehaviour
     // Coroutine to handle the burning process
     IEnumerator Burn()
     {
-        isBurning = true;
-        while (currentBurnTime < burnTime)
-        {
-            currentBurnTime += Time.deltaTime;
-            yield return null;
-        }
-        // Fire has burned out
-        isBurning = false;
-        currentBurnTime = 0f;
-        Debug.Log("Fire has burned out.");
+    isBurning = true;
+    while (currentBurnTime < burnTime)
+    {
+        currentBurnTime += Time.deltaTime;
+        Debug.Log("Burning... Current Burn Time: " + currentBurnTime);
+        yield return null;
+    }
+    // Fire has burned out
+    isBurning = false;
+    currentBurnTime = 0f;
+    Debug.Log("Fire has burned out.");
     }
 }
