@@ -8,8 +8,8 @@ public class Force : MonoBehaviour
     Vector3 spinVector = new Vector3(50000.0f, 50000.0f, 50000.0f);
 
     public rotation rotScript;
-  
-    
+
+    public float timescaled = 0.5f;
 
     void OnCollisionEnter(Collision other)
     {
@@ -27,8 +27,8 @@ public class Force : MonoBehaviour
 
 
         //statsScript.paused = true;
-        Time.timeScale = 0;
-        
+        Time.timeScale = timescaled;
+
         yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .75f);
 
         Time.timeScale = 1;
