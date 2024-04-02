@@ -5065,6 +5065,11 @@ PrefabInstance:
       propertyPath: rotScript
       value: 
       objectReference: {fileID: 2059271140}
+    - target: {fileID: 3593453705646639762, guid: 2947ad29c7d9516428fbd39fa3a7c9ee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 3983649176717491215, guid: 2947ad29c7d9516428fbd39fa3a7c9ee,
         type: 3}
       propertyPath: m_Name
@@ -5130,6 +5135,16 @@ PrefabInstance:
       propertyPath: rotScript
       value: 
       objectReference: {fileID: 2059271140}
+    - target: {fileID: 8280790573582465265, guid: 2947ad29c7d9516428fbd39fa3a7c9ee,
+        type: 3}
+      propertyPath: rotScript
+      value: 
+      objectReference: {fileID: 2059271140}
+    - target: {fileID: 8280790573582465265, guid: 2947ad29c7d9516428fbd39fa3a7c9ee,
+        type: 3}
+      propertyPath: trainAnim
+      value: 
+      objectReference: {fileID: 6575419660758129274}
     - target: {fileID: 8441445148918743471, guid: 2947ad29c7d9516428fbd39fa3a7c9ee,
         type: 3}
       propertyPath: moveWithCustomTransform
