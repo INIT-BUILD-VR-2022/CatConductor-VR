@@ -13,7 +13,7 @@ public class rotation : MonoBehaviour
     private float speedIncreaseRate = 0.2f;
 
     //rate of slowing down
-    private float slowDownRate = 0.1f;
+    private float slowDownRate = 0.4f;
 
     // Minimum and maximum rotation speed
     private float minRotationSpeed = 0.1f;

@@ -2526,7 +2526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   island: {fileID: 474244870}
   rotScript: {fileID: 2059271140}
-  baseSpawnTimerModifier: 1
+  baseSpawnTimerModifier: 1.2
   spawnLocations: []
   smallObstacle:
   - {fileID: 3607115701355128687, guid: dc77304f718c0db469b6f16b1efa7794, type: 3}
@@ -4966,11 +4966,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 73b598bb080df754597bdf520b30e8d7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.279
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5143,6 +5143,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6462856556934270057}
+    - targetCorrespondingSourceObject: {fileID: 3983649176717491215, guid: 2947ad29c7d9516428fbd39fa3a7c9ee,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6575419660758129274}
   m_SourcePrefab: {fileID: 100100000, guid: 2947ad29c7d9516428fbd39fa3a7c9ee, type: 3}
 --- !u!4 &6575419660758129270 stripped
 Transform:
@@ -5150,6 +5154,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6575419660758129269}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6575419660758129274
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462856556934270056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a84c9a31a1114d42b1a9b89fa6c98b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8891446523551808058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5699924347331735192, guid: dc77304f718c0db469b6f16b1efa7794,
