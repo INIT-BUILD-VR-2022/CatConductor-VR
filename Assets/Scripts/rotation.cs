@@ -4,26 +4,23 @@ using UnityEngine;
 
 public class rotation : MonoBehaviour
 {
+
+    [HideInInspector] public float baseRotationSpeed = .5f;
     // Initial rotation speed
-    private float rotationSpeed = .5f;
+    [HideInInspector] public float rotationSpeed = .5f;
 
     // speed increase rate per second
-    private float speedIncreaseRate = 0.1f;
+    private float speedIncreaseRate = 0.2f;
 
     //rate of slowing down
-    private float slowDownRate = 0.5f;
+    private float slowDownRate = 0.4f;
 
     // Minimum and maximum rotation speed
-    private float minRotationSpeed = 0.01f;
-    private float maxRotationSpeed = 5f;
+    private float minRotationSpeed = 0.1f;
+    private float maxRotationSpeed = 1.9f;
 
-    private bool isSlowingDown = false; //flag to check if isSlowingDown function is active
-    private float slowDownTimer = 0f; //timer to track slow down duration
-    private float maxSlowDownTime = 3f; //Maximum duration for slow down
+    //public spawningObstacles spawnScript;
 
-    //Capture Speed Variable before activating SlowDownRotation method
-    private float originalSpeed = 0f;
-    private float rapidSpeedUpRate = 0.5f;
 
     
 
@@ -36,44 +33,24 @@ public class rotation : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate() {
         
-        /*if (!isSlowingDown)
+     
+
+        
+        if (Input.GetKey(KeyCode.Z))
         {
             SpeedUpRotation();
-        }*/
-
-
-        // Check for the Z key being pressed and not already slowing down
-        if (Input.GetKeyDown(KeyCode.Z) && !isSlowingDown)
-        {
-            originalSpeed = rotationSpeed;
-            isSlowingDown = true;
-            slowDownTimer = 0f; // Reset the slow down timer
         }
 
-        if (isSlowingDown)
+        if (Input.GetKey(KeyCode.X))
         {
             SlowDownRotation();
-            slowDownTimer += Time.deltaTime; // Update the slow down timer
-
-            // Check if the slow down duration has exceeded the maximum allowed time
-            if (slowDownTimer >= maxSlowDownTime || Input.GetKeyUp(KeyCode.Z))
-            {
-                isSlowingDown = false; // Deactivate slow down
-                StartCoroutine(RapidSpeedUp());
-            }
         }
+
 
         transform.Rotate(0f, rotationSpeed, 0f, Space.Self);
     }
 
-    IEnumerator RapidSpeedUp()
-    {
-        while (rotationSpeed < originalSpeed)
-        {
-            rotationSpeed += rapidSpeedUpRate * Time.deltaTime;
-            yield return null;
-        }
-    }
+    
 
     // Slowly increase in speed at a slow rate over time in int
     //be able to slow down a set amount but not to zero
@@ -90,7 +67,8 @@ public class rotation : MonoBehaviour
     public void SlowDownRotation()
     {
         rotationSpeed -= slowDownRate * Time.deltaTime;
-        rotationSpeed = Mathf.Max(rotationSpeed, minRotationSpeed);
+
+        rotationSpeed = Mathf.Clamp(rotationSpeed, minRotationSpeed, maxRotationSpeed);
     }
 
 
