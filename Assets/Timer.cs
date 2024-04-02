@@ -7,41 +7,37 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
 
-    public float TimeLeft;
-    public bool TimerOn = false;
-
+    public float timevalue;
     public TextMeshProUGUI Timertxt;
-    void Start()
-    {
-        
-        TimerOn = true;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (TimerOn)
-        {
-            if (TimeLeft > 0)
+            if (timevalue > 0)
             {
-                TimeLeft -= Time.deltaTime;
-                updateTimer(TimeLeft);
+                timevalue -= Time.deltaTime;
             }
             else
             {
-                
-                TimeLeft = 0;
-                TimerOn = false;
+                timevalue = 0;
             }
-        }
+            DisplayTime(timevalue);
     }
-    void updateTimer(float currentTime)
+    void DisplayTime(float timetodisplay)
     {
-        currentTime += 1;
+        if (timetodisplay < 0)
+        {
+            timetodisplay = 0;
+            print("Time is UP!");
+        }
+        else if(timetodisplay > 0)
+        {
+            timetodisplay += 1;
+        }
 
-        float minutes = Mathf.FloorToInt(currentTime / 60);
-        float seconds = Mathf.FloorToInt(currentTime % 60);
+        float minutes = Mathf.FloorToInt(timetodisplay / 60);
+        float seconds = Mathf.FloorToInt(timetodisplay % 60);
 
-        Timertxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        Timertxt.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
