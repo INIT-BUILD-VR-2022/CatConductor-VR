@@ -876,6 +876,8 @@ MonoBehaviour:
   moveSpeed: 3
   maxLeftPositions: -1
   maxRightPositions: 1
+  trainAnim: {fileID: 0}
+  rotScript: {fileID: 0}
 --- !u!1001 &364501129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1653,6 +1655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978d67f94f70bb14a8c1a92cb13182b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseRotationSpeed: 0.5
+  rotationSpeed: 0.5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,11 +2334,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   island: {fileID: 474244870}
-  spawnTimer: 2
+  rotScript: {fileID: 0}
+  baseSpawnTimerModifier: 1
   spawnLocations: []
-  obstacle:
-  - {fileID: 3607115701355128687, guid: dc77304f718c0db469b6f16b1efa7794, type: 3}
-  - {fileID: 2819151134572468415, guid: c85b4a57adc122346b48ae5baf5e980b, type: 3}
+  smallObstacle: []
+  mediumObstacle: []
+  bigObstacle: []
+  eventsToSpawn: 
 --- !u!4 &970952302
 Transform:
   m_ObjectHideFlags: 0
@@ -4218,6 +4224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978d67f94f70bb14a8c1a92cb13182b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseRotationSpeed: 0.5
+  rotationSpeed: 0.5
 --- !u!1001 &2068566075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4613,13 +4621,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116155281}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.68110687, z: -0, w: 0.732184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.00000047683716, z: 9.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 664601175}
-  m_LocalEulerAnglesHint: {x: 0, y: -85.86, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2116155283
 MonoBehaviour:
   m_ObjectHideFlags: 0
