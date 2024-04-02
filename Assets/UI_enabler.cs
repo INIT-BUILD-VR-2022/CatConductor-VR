@@ -13,6 +13,14 @@ public class UI_enabler : MonoBehaviour
     Vector3 controllerPosition;
     Vector3 player_Head;
 
+    //TODO:
+    /*
+     * Ensure that the scale is equal to the ratio in the main scene (normal scale is 40) so do .04
+     * find better solution to ui enabling 
+     * add functinality to buttons in the menu
+     * 
+     */
+
     // Start is called before the first frame update
     void Start()
     {
