@@ -25,6 +25,7 @@ public class CartStats : MonoBehaviour
         }
     }
 
+
     private void Start()
     {
         Debug.Log("HP: " + hp);
