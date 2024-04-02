@@ -6,10 +6,14 @@ public class Force : MonoBehaviour
 {
     Vector3 ImpulseVector = new Vector3(0.0f, 5000.0f, 10000.0f);
     Vector3 spinVector = new Vector3(50000.0f, 50000.0f, 50000.0f);
-    public CartStats cartStats;
+
+    public rotation rotScript;
+  
+    
 
     void OnCollisionEnter(Collision other)
     {
+
         if(other.gameObject.tag == "Player")
         {
             StartCoroutine(Collide());
@@ -25,7 +29,7 @@ public class Force : MonoBehaviour
         //statsScript.paused = true;
         Time.timeScale = 0;
         
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .75f);
 
         Time.timeScale = 1;
 
