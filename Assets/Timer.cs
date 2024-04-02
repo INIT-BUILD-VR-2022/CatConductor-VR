@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
 
     public float timevalue;
     public TextMeshProUGUI Timertxt;
+    public GameOver GameOverScript;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,10 @@ public class Timer : MonoBehaviour
             else
             {
                 timevalue = 0;
+                if (GameOverScript != null)
+                {
+                    GameOverScript.TriggerGameOverEffects();
+                }
             }
             DisplayTime(timevalue);
     }

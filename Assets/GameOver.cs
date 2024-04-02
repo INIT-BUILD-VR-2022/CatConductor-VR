@@ -6,6 +6,7 @@ public class GameOver : MonoBehaviour
     public GameObject gameOverScreen;
     public CartStats cartStats;
     public CatSpawner catSpawner;
+    public Timer timer;
 
     private void Update()
     {
@@ -20,7 +21,7 @@ public class GameOver : MonoBehaviour
         }
     }
 
-    private void TriggerGameOverEffects()
+    public void TriggerGameOverEffects()
     {
         //Disable CatSpawner Script
         if(catSpawner != null)

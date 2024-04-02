@@ -10,9 +10,9 @@ public class Cart_Move : MonoBehaviour
     public int maxRightPositions = 1; // Set the maximum right positions
     private int currentXPosition = 0; // Tracks the current position
 
-    public Animator trainAnim;
+    //public Animator trainAnim;
 
-    public rotation rotScript;
+    //public rotation rotScript;
 
     bool canInput = true;
 
@@ -26,7 +26,7 @@ public class Cart_Move : MonoBehaviour
     void FixedUpdate()
     {
 
-        trainAnim.speed = rotScript.rotationSpeed; 
+        //trainAnim.speed = rotScript.rotationSpeed; 
 
         // Move Left
         if (Input.GetKey(KeyCode.A) && canInput)
