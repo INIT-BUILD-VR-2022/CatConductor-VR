@@ -7,9 +7,6 @@ public class GameOver : MonoBehaviour
     public CartStats cartStats;
     public CatSpawner catSpawner;
 
-    Vector3 ImpulseVector = new Vector3(-1, 1, -1);
-    Vector3 spinVector = new Vector3(-1, 1, -1);
-
     private void Update()
     {
         CheckGameOver();
@@ -37,13 +34,42 @@ public class GameOver : MonoBehaviour
             gameOverScreen.SetActive(true);
         }
 
+        //Start the slow-motion effect
+        StartCoroutine(SlowMotion());
+
         Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in rigidbodies)
         {
             rb.isKinematic = false;
             rb.useGravity = true;
-            rb.AddForce(ImpulseVector, ForceMode.Impulse);
-            rb.AddTorque(spinVector, ForceMode.Impulse);
+
+            Vector3 leftwardForce = new Vector3(0f, 1f, -1f); // Negative X direction
+            float forceMagnitude = 2f; // Adjust this value to achieve the desired speed
+
+            // Apply the force, multiplied by the desired magnitude
+            rb.AddForce(leftwardForce.normalized * forceMagnitude, ForceMode.VelocityChange);
+        }
+    }
+
+    private IEnumerator SlowMotion()
+    {
+        for (float t = 0; t < 2f; t += Time.unscaledDeltaTime)
+        {
+            Time.timeScale = Mathf.Lerp(1f, 0.1f, t / 2f);
+            yield return null;
+        }
+
+        Time.timeScale = 0;
+
+        FreezeRigidbodies();
+    }
+
+    private void FreezeRigidbodies()
+    {
+        Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody rb in rigidbodies)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 }
