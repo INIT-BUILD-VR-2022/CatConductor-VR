@@ -11,7 +11,7 @@ public class UI_enabler : MonoBehaviour
     public GameObject Left_Controller;
     public Canvas handUI;
 
-    private string input = "Fire1";
+    private string input = "Vertical";
     /*
      * for future reference Fire1 is the x button on the controllers
      */
@@ -19,7 +19,7 @@ public class UI_enabler : MonoBehaviour
     //TODO:
     /*
      * Ensure that the scale is equal to the ratio in the main scene (normal scale is 40) so do .04
-     * find better solution to ui enabling 
+     * find way to get input for the ui enabling
      * add functinality to buttons in the menu
      * 
      */
@@ -35,6 +35,7 @@ public class UI_enabler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Input.GetButton(input));
         if (Input.GetButtonDown(input))
         {
             Debug.Log("The button was pressed");
