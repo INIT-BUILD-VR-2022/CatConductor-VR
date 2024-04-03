@@ -12,8 +12,12 @@ public class UI_enabler : MonoBehaviour
     public Canvas handUI;
 
     private string input = "Vertical";
+    public float threshHold = .1f;
+    public float negativeThreshold = -.2f;
+
+
     /*
-     * for future reference Fire1 is the x button on the controllers
+     * for future reference Fire1 is the a button on the controllers
      */
 
     //TODO:
@@ -35,21 +39,15 @@ public class UI_enabler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetButton(input));
-        if (Input.GetButtonDown(input))
+        Debug.Log(Input.GetAxis(input));
+        if (Input.GetAxis(input) > threshHold)
         {
-            Debug.Log("The button was pressed");
-
-            if (handUI.enabled == true)
-            {
-                handUI.enabled = false;
-                Debug.Log("The UI was disabled");
-            }
-            else if (handUI.enabled == false)
-            {
-                handUI.enabled = true;
-                Debug.Log("The UI was enabled");
-            }
+            handUI.enabled = true;
+        }
+        else if(Input.GetAxis(input) < negativeThreshold)
+        {
+            handUI.enabled = false;
         }
     }
+
 }
