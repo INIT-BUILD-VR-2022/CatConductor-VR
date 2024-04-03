@@ -24,7 +24,7 @@ public class CartStats : MonoBehaviour
 
             if (hp <= 0)
             {
-                Debug.Log("Game Over");
+                trigger.gameObject.GetComponent<Force>().enabled = false;
             }
         }
     }
