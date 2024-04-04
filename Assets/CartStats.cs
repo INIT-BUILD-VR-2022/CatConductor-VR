@@ -1,11 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CartStats : MonoBehaviour
 {
     public bool paused = false;
+    public Timer timer;
     public int hp;
-    public float time;
-    
+    [HideInInspector] public int score = 0;
+    public float initialTime;
+    public HealthBar healthBar;
+    public int currentHealth;
+
+
+    private void OnTriggerEnter(Collider trigger)
+    {
+        if (trigger.CompareTag("HitBox"))
+        {
+            hp -= 1; 
+            currentHealth = hp;//reduce hp by 1
+            healthBar.SetHealth(currentHealth);
+            Debug.Log("HP: " + hp);
+
+            if (hp <= 0)
+            {
+                trigger.gameObject.GetComponent<Force>().enabled = false;
+            }
+        }
+    }
+
+
+    private void Start()
+    {
+        currentHealth = hp;
+        Debug.Log("HP: " + hp);
+        healthBar.SetMaxHealth(hp);
+
+        if (timer != null)
+        {
+            timer.timevalue = initialTime;
+        }
+    }
+
 }

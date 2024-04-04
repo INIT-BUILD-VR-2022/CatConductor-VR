@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6814019913221362923}
   m_Layer: 7
   m_Name: CarboardBox_1
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
