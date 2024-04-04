@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Furnace : MonoBehaviour
 {
-    public float burnTime = 10f; // Time in seconds the furnace burns with each coal
+    public float burnTime = 15f; // Time in seconds the furnace burns with each coal
 
     public float currentBurnTime = 0f; // Current burn time
     public bool isBurning = false; // Flag to track if the furnace is burning
@@ -32,7 +32,6 @@ public class Furnace : MonoBehaviour
         while (currentBurnTime < burnTime)
         {
             currentBurnTime += Time.deltaTime; // Increment the current burn time
-            Debug.Log("Current Burn Time: " + currentBurnTime); // Log the current burn time
             yield return null; // Wait for the next frame
         }
         // Fire has burned out

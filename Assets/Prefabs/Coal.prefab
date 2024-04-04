@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7286022923404009240}
   - component: {fileID: 85206822969887536}
   - component: {fileID: 8736874697147069115}
+  - component: {fileID: 5985847787289997132}
+  - component: {fileID: 1129551823867337126}
   m_Layer: 7
   m_Name: Coal
   m_TagString: Untagged
@@ -30,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 4667770967529256622}
   serializedVersion: 2
   m_LocalRotation: {x: -0.06991912, y: -0.000000025844198, z: -0.99734807, w: 0.020205788}
-  m_LocalPosition: {x: -0.07262421, y: 0.07904059, z: 0.008495331}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 2.231, y: 7.17, z: -10.45}
+  m_LocalScale: {x: 0.17269476, y: 0.15239874, z: 0.17259}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -147,3 +149,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3027b69af1c6cd64f969115db99582d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5985847787289997132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667770967529256622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64fdb631a5c05c7478dba9fd4172703e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coalAnimator: {fileID: 1129551823867337126}
+  smokeParticles: {fileID: 0}
+  fireParticles: {fileID: 0}
+--- !u!95 &1129551823867337126
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667770967529256622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e97d712cb4e9d3f4f9e8e595f533f73a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

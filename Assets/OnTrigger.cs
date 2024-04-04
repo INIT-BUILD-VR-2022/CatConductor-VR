@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Coal : MonoBehaviour
 {
-    public Animation burningAnimation; // Reference to the burning animation
+    public Animator coalAnimator; // Reference to the burning animation
     public ParticleSystem smokeParticles; // Reference to the smoke particle system
     public ParticleSystem fireParticles; // Reference to the fire particle system
 
@@ -19,12 +19,8 @@ public class Coal : MonoBehaviour
                 furnace.StartBurning();
                 Debug.Log("Coal added to furnace.");
                 isBurning = true; 
+                coalAnimator.SetBool("Burning", true);
 
-                // Start the burning animation when the coal enters the furnace
-                if (burningAnimation != null)
-                {
-                    burningAnimation.Play();
-                }
 
                 // Activate the particle systems for fire and smoke
                 if (smokeParticles != null)
@@ -52,36 +48,8 @@ public class Coal : MonoBehaviour
             fireParticles.Stop();
         }
 
-        // Stop the burning animation
-        if (burningAnimation != null)
-        {
-            burningAnimation.Stop();
-        }
-
         // Destroy the coal object
         Destroy(gameObject);
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (isBurning)
-        {
-            // If the coal is burning, stop the particle systems and animation when it exits the furnace
-            if (smokeParticles != null)
-            {
-                smokeParticles.Stop();
-            }
-            if (fireParticles != null)
-            {
-                fireParticles.Stop();
-            }
-            if (burningAnimation != null)
-            {
-                burningAnimation.Stop();
-            }
-        }
-
-        // If the coal is not burning anymore and it exits the furnace collider, destroy it
-        Destroy(gameObject);
-    }
 }
