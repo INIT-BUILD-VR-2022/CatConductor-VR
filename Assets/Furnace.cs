@@ -10,6 +10,8 @@ public class Furnace : MonoBehaviour
 
     private Coal coal; // Reference to the coal object
 
+    public Timer timer;
+
     void Start()
     {
         coal = null; // Initialize coal reference to null
@@ -18,10 +20,9 @@ public class Furnace : MonoBehaviour
     // Function to start the furnace burning
     public void StartBurning()
     {
-        if (!isBurning)
-        {
-            StartCoroutine(Burn());
-        }
+        timer.timevalue += 10;
+        StartCoroutine(Burn());
+        
     }
 
     // Coroutine to handle the burning process
