@@ -8,12 +8,8 @@ public class GameOver : MonoBehaviour
     public CatSpawner catSpawner;
     public Timer timer;
 
-    private void Update()
-    {
-        CheckGameOver();
-    }
 
-    private void CheckGameOver()
+    public void CheckGameOver()
     {
         if (cartStats.hp <= 0)
         {
@@ -36,7 +32,7 @@ public class GameOver : MonoBehaviour
         }
 
         //Start the slow-motion effect
-        StartCoroutine(SlowMotion());
+        //StartCoroutine(SlowMotion());
 
         Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in rigidbodies)
@@ -50,6 +46,8 @@ public class GameOver : MonoBehaviour
             // Apply the force, multiplied by the desired magnitude
             rb.AddForce(leftwardForce.normalized * forceMagnitude, ForceMode.VelocityChange);
         }
+
+        Time.timeScale = 0;
     }
 
     private IEnumerator SlowMotion()

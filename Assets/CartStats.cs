@@ -24,7 +24,7 @@ public class CartStats : MonoBehaviour
 
             if (hp <= 0)
             {
-                trigger.gameObject.GetComponent<Force>().enabled = false;
+                Destroy(trigger.gameObject.GetComponent<Force>());
             }
         }
     }
