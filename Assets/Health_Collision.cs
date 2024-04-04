@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Health_Collision : MonoBehaviour
 {
-    public int maxHealth = 3;
+    public int maxHealth = 1;
     public int currentHealth;
     public HealthBar healthBar;
     public GameOver gameOverScript;

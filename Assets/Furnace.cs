@@ -10,6 +10,8 @@ public class Furnace : MonoBehaviour
 
     private Coal coal; // Reference to the coal object
 
+    public float amountOfTimeAdded;
+
     public Timer timer;
 
     void Start()
@@ -20,7 +22,7 @@ public class Furnace : MonoBehaviour
     // Function to start the furnace burning
     public void StartBurning()
     {
-        timer.timevalue += 10;
+        timer.timevalue += amountOfTimeAdded;
         StartCoroutine(Burn());
         
     }
