@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4579794608158640348}
   - component: {fileID: 6828223475135235794}
   - component: {fileID: -62805618385372613}
+  - component: {fileID: 6814019913221362923}
   m_Layer: 7
   m_Name: CarboardBox_1
   m_TagString: HitBox
@@ -31,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 7814870094968927821}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.042503297, z: -0, w: -0.9990964}
-  m_LocalPosition: {x: -13.66598, y: 1.7143426, z: 63.728992}
-  m_LocalScale: {x: 20, y: 10, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 40, y: 10, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -185,10 +186,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6814019913221362923}
+        m_TargetAssemblyTypeName: GrabOffTrack, Assembly-CSharp
+        m_MethodName: Detach
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6814019913221362923}
+        m_TargetAssemblyTypeName: GrabOffTrack, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -281,7 +306,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
@@ -297,5 +322,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3027b69af1c6cd64f969115db99582d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6814019913221362923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814870094968927821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c44d2d3bcd7ccb4cb2c7ae0ca6908b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

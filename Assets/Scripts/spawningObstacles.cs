@@ -7,10 +7,18 @@ public class spawningObstacles : MonoBehaviour
     // Start is called before the first frame update
 
     public Transform island;
+
+    public rotation rotScript;
+
+    private float baseSpawnTimer = 1f;
+
+    //Use to adjust how frequently things will spawn in general, higher means slower
+    public float baseSpawnTimerModifier = 1f;
     public List<Transform> spawnLocations = new List<Transform>();
     public List<GameObject> smallObstacle = new List<GameObject>();
     public List<GameObject> mediumObstacle = new List<GameObject>();
     public List<GameObject> bigObstacle = new List<GameObject>();
+    public List<GameObject> coal = new List<GameObject>();
 
     //Chance for each event to happen out of 100
     // 1 = chance for a single track obstacle to spawn
@@ -23,6 +31,10 @@ public class spawningObstacles : MonoBehaviour
 
     void Start()
     {
+        //Base spawn timer is a value that will change with the goal of spawning more frequently when the platform is spinning faster
+        //and less frequently when the platform is spinning slower
+        baseSpawnTimer = baseSpawnTimerModifier * rotScript.baseRotationSpeed/rotScript.rotationSpeed;
+
         foreach (Transform child in transform)
         {
             spawnLocations.Add(child.transform);
@@ -34,15 +46,15 @@ public class spawningObstacles : MonoBehaviour
             Debug.Log(eventsToSpawn[i]);
         }
 
-        StartCoroutine(Spawner(2f));
+        StartCoroutine(Spawner(baseSpawnTimer));
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        /*if(statsScript.paused){
-            Time.timeScale = 0;
-        }*/
+
+        baseSpawnTimer = baseSpawnTimerModifier * rotScript.baseRotationSpeed/rotScript.rotationSpeed;
+        
     }
 
     IEnumerator Spawner(float spawnTimer){
@@ -59,28 +71,39 @@ public class spawningObstacles : MonoBehaviour
 
         float spawnTimer = 0;
         int nextAction = Random.Range(0, totalChance);
-        Debug.Log(nextAction);
+        GameObject obstacle;
 
         if(nextAction < eventsToSpawn[0]){
 
             int trackSpawn = Random.Range(0, 3);
             int rock = Random.Range(0, smallObstacle.Count);
-            Instantiate(smallObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island); 
+            obstacle = Instantiate(smallObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island); 
 
-            spawnTimer = Random.Range(.5f, 1.5f);
+            spawnTimer = Random.Range(baseSpawnTimer * .5f, baseSpawnTimer * 1.5f);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
 
         }
 
         else if(nextAction < eventsToSpawn[1]){
             int trackSpawn = Random.Range(3, 5);
             int rock = Random.Range(0, mediumObstacle.Count);
-            Instantiate(mediumObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island);
+            obstacle = Instantiate(mediumObstacle[rock], spawnLocations[trackSpawn].position, Quaternion.identity, island);
 
-            spawnTimer = Random.Range(1.5f, 3f);
+            spawnTimer = Random.Range(baseSpawnTimer * 1.5f, baseSpawnTimer * 3f);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
         }
 
         else if(nextAction < eventsToSpawn[2]){
-            Instantiate(bigObstacle[0], spawnLocations[5].position, Quaternion.identity, island);
+            obstacle = Instantiate(bigObstacle[0], spawnLocations[5].position, Quaternion.identity, island);
+            spawnTimer = Random.Range(baseSpawnTimer * 2f, baseSpawnTimer * 4f);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
+        }
+
+        else if(nextAction < eventsToSpawn[3]){
+            int trackSpawn = Random.Range(0, 3);
+            Vector3 pos = new Vector3(spawnLocations[trackSpawn].position.x, spawnLocations[trackSpawn].position.y + .7f, spawnLocations[trackSpawn].position.z);
+            obstacle = Instantiate(coal[0], pos, Quaternion.identity, island);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
             spawnTimer = Random.Range(2f, 4f);
         }
 
