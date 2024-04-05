@@ -10,8 +10,8 @@ public class ChooChooTrigger : MonoBehaviour
 
     private bool isWithinSpeedTrigger = false;
     private bool isLooping = false;
-    public float loopStart = 0.3f;
-    public float loopEnd = 0.4f;
+    public float loopStart = 0f;
+    public float loopEnd = 2.5f;
 
     // Update is called once per frame
     void Update()
