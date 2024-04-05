@@ -705,6 +705,8 @@ MonoBehaviour:
   audioSource: {fileID: 251157850}
   chooChooSound: {fileID: 8300000, guid: 7a0cb79ec552f334b8cde065067382df, type: 3}
   speedTriggerTransform: {fileID: 972122118}
+  loopStart: 0
+  loopEnd: 2.5
 --- !u!82 &251157850
 AudioSource:
   m_ObjectHideFlags: 0
