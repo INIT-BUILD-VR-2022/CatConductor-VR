@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Force : MonoBehaviour
 {
-    //public CartStats cartStats;
     Vector3 ImpulseVector = new Vector3(0.0f, 5000.0f, 10000.0f);
     Vector3 spinVector = new Vector3(50000.0f, 50000.0f, 50000.0f);
 
     public rotation rotScript;
-
+  
+    
 
     void OnCollisionEnter(Collision other)
     {
-        
-        if (other.gameObject.tag == "Player")
+
+        if(other.gameObject.tag == "Player")
         {
             StartCoroutine(Collide());
         }
@@ -25,15 +25,15 @@ public class Force : MonoBehaviour
     IEnumerator Collide()
     {
 
-        
-        
-        Time.timeScale = 0;
 
-        yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .75f);
+        //statsScript.paused = true;
+        Time.timeScale = 0;
+        
+        yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .25f);
 
         Time.timeScale = 1;
 
-        
+        //statsScript.paused = false;
         transform.parent = null;
         GetComponent<Rigidbody>().AddForce(ImpulseVector, ForceMode.Force);
         GetComponent<Rigidbody>().AddTorque(spinVector, ForceMode.Force);
@@ -42,6 +42,5 @@ public class Force : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(3f);
         Destroy(gameObject);
-        
     }
 }
