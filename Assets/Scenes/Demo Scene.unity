@@ -998,7 +998,6 @@ Transform:
   m_Children:
   - {fileID: 1544937150}
   - {fileID: 458084374}
-  - {fileID: 1549740731}
   - {fileID: 1522827680}
   - {fileID: 553806825}
   - {fileID: 1331166817}
@@ -1122,7 +1121,7 @@ GameObject:
   - component: {fileID: 992827375}
   - component: {fileID: 992827374}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: TrainSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,13 +1135,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992827372}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1002, z: 11.187}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7748623, z: -0, w: 0.63213015}
+  m_LocalPosition: {x: -0.01139, y: -0.12134, z: 9.832}
+  m_LocalScale: {x: 1.8698, y: 1.3325, z: 1.2682}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1549740731}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 101.585, z: 0}
 --- !u!199 &992827374
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -1189,7 +1188,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 1
   m_CameraVelocityScale: 0
   m_VelocityScale: 0.04
   m_LengthScale: 0
@@ -2054,7 +2053,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1000
+      scalar: 10000000
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -2107,7 +2106,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2165,7 +2164,7 @@ ParticleSystem:
         serializedVersion: 2
         minMaxState: 3
         scalar: 50
-        minScalar: 10
+        minScalar: 40
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -4867,7 +4866,7 @@ ParticleSystem:
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
-    multiplyColliderForceByParticleSpeed: 0
+    multiplyColliderForceByParticleSpeed: 1
     multiplyColliderForceByCollisionAngle: 1
     m_Planes: []
     m_Dampen:
@@ -5233,7 +5232,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 0.2
-    textureMode: 0
+    textureMode: 1
     textureScale: {x: 1, y: 1}
     ribbonCount: 1
     shadowBias: 0.5
@@ -6304,6 +6303,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9014170784424948809, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_IsActive
@@ -6516,6 +6535,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f16149a58eee0b74ca9dbfaf56301664,
     type: 3}
   m_PrefabInstance: {fileID: 1432950600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1455566418 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7284147498207307389, guid: 19396b83b73a0ce4b97e216e01ec9f69,
+    type: 3}
+  m_PrefabInstance: {fileID: 2456116627771166324}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1464322238
 PrefabInstance:
@@ -6828,7 +6853,7 @@ GameObject:
   - component: {fileID: 1549740729}
   - component: {fileID: 1549740728}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6914,12 +6939,12 @@ Transform:
   m_GameObject: {fileID: 1549740727}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -71.9, y: 26.3, z: 23.8}
-  m_LocalScale: {x: 463.59204, y: 214.14725, z: 9.649436}
+  m_LocalPosition: {x: -186.51894, y: 54.094593, z: -5.1297836}
+  m_LocalScale: {x: 951.2508, y: 439.41162, z: 19.799809}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 992827373}
-  m_Father: {fileID: 961386460}
+  m_Father: {fileID: 1455566418}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1636895400
 PrefabInstance:
@@ -7308,7 +7333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7284147498207307389, guid: 19396b83b73a0ce4b97e216e01ec9f69,
+        type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1549740731}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19396b83b73a0ce4b97e216e01ec9f69, type: 3}
 --- !u!1660057539 &9223372036854775807
