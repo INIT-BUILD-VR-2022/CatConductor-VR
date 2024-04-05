@@ -15,11 +15,6 @@ public class UI_enabler : MonoBehaviour
     public float threshHold = .1f;
     public float negativeThreshold = -.2f;
 
-
-    /*
-     * for future reference Fire1 is the a button on the controllers
-     */
-
     //TODO:
     /*
      * Ensure that the scale is equal to the ratio in the main scene (normal scale is 40) so do .04
@@ -33,7 +28,7 @@ public class UI_enabler : MonoBehaviour
     {
         controllerHandL = Left_Controller.GetComponentInParent<Transform>();
         handUI = handUI.GetComponent<Canvas>();
-        handUI.enabled = false;
+        //handUI.enabled = false;
     }
 
     // Update is called once per frame
