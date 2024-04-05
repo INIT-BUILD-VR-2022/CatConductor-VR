@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 329799746172002781}
   m_Layer: 6
   m_Name: Rocks_Mossy_24
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,5 +147,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3027b69af1c6cd64f969115db99582d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objCollider: {fileID: 8466070053472134431, guid: dc77304f718c0db469b6f16b1efa7794,
-    type: 3}

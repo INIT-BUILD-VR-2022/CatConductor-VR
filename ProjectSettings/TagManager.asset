@@ -15,11 +15,11 @@ TagManager:
   - Obstacle
   - Grabbable
   - Terrian
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Post Process
+  - Whistle
+  - Lever
+  - SpeedUp
+  - SlowDown
   - 
   - 
   - 
