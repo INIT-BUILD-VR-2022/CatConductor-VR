@@ -7,17 +7,19 @@ public class GameOver : MonoBehaviour
     public CartStats cartStats;
     public CatSpawner catSpawner;
     public Timer timer;
+    public Rigidbody rb;
+    public AudioSource music;
 
 
     public void CheckGameOver()
     {
         if (cartStats.hp <= 0)
         {
-            TriggerGameOverEffects();
+            TriggerGameOverEffects(true);
         }
     }
 
-    public void TriggerGameOverEffects()
+    public void TriggerGameOverEffects(bool killed)
     {
         //Disable CatSpawner Script
         if(catSpawner != null)
@@ -30,24 +32,15 @@ public class GameOver : MonoBehaviour
         {
             gameOverScreen.SetActive(true);
         }
-
-        //Start the slow-motion effect
-        //StartCoroutine(SlowMotion());
-
-        Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
-        foreach (Rigidbody rb in rigidbodies)
+        
+        //if a rock killed you, fling the train away
+        if(killed)
         {
-            rb.isKinematic = false;
-            rb.useGravity = true;
-
-            Vector3 leftwardForce = new Vector3(0f, 1f, -1f); // Negative X direction
-            float forceMagnitude = 2f; // Adjust this value to achieve the desired speed
-
-            // Apply the force, multiplied by the desired magnitude
-            rb.AddForce(leftwardForce.normalized * forceMagnitude, ForceMode.VelocityChange);
+            StartCoroutine(Death());
+        }else{
+            //this slowdown looks a bit jank, it should be rotation slowing not the timescale
+            StartCoroutine(SlowMotion());
         }
-
-        Time.timeScale = 0;
     }
 
     private IEnumerator SlowMotion()
@@ -60,16 +53,36 @@ public class GameOver : MonoBehaviour
 
         Time.timeScale = 0;
 
-        FreezeRigidbodies();
     }
 
-    private void FreezeRigidbodies()
-    {
-        Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
-        foreach (Rigidbody rb in rigidbodies)
-        {
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-        }
+
+    private IEnumerator Death(){
+
+        Time.timeScale = 0;
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        Time.timeScale = 1;
+        music.Stop();
+
+        
+        rb.isKinematic = false;
+        rb.useGravity = true;
+        GetComponent<Collider>().enabled = false; 
+
+        Vector3 spinVector = new Vector3(50000.0f, 50000.0f, 50000.0f);
+        Vector3 leftwardForce = new Vector3(0.0f, 5000.0f, -10000.0f); // Negative X direction
+        float forceMagnitude = 1f; // Adjust this value to achieve the desired speed
+
+            
+        rb.AddForce(leftwardForce, ForceMode.Force);
+        rb.AddTorque(spinVector, ForceMode.Force);
+        
+
+        yield return new WaitForSecondsRealtime(3f);
+        //Probably replace this with a function that sets time scale to 1 but stops the rotation of the island, this looks sorta jank
+        StartCoroutine(SlowMotion());
+        
     }
 }
 

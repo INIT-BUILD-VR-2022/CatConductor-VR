@@ -102,7 +102,8 @@ public class spawningObstacles : MonoBehaviour
         else if(nextAction < eventsToSpawn[3]){
             int trackSpawn = Random.Range(0, 3);
             Vector3 pos = new Vector3(spawnLocations[trackSpawn].position.x, spawnLocations[trackSpawn].position.y + .7f, spawnLocations[trackSpawn].position.z);
-            Instantiate(coal[0], pos, Quaternion.identity, island);
+            obstacle = Instantiate(coal[0], pos, Quaternion.identity, island);
+            obstacle.GetComponent<Force>().rotScript = rotScript;
             spawnTimer = Random.Range(2f, 4f);
         }
 

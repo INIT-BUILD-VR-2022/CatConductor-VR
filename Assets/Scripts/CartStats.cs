@@ -11,11 +11,12 @@ public class CartStats : MonoBehaviour
     public float initialTime;
     public HealthBar healthBar;
     public int currentHealth;
+    public GameOver gameOverScript;
 
 
-    private void OnTriggerEnter(Collider trigger)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (trigger.CompareTag("HitBox"))
+        if (collision.gameObject.CompareTag("HitBox"))
         {
             hp -= 1; 
             currentHealth = hp;//reduce hp by 1
@@ -24,8 +25,9 @@ public class CartStats : MonoBehaviour
 
             if (hp <= 0)
             {
-                Destroy(trigger.gameObject.GetComponent<Force>());
+                Destroy(collision.gameObject.GetComponent<Force>());
             }
+            gameOverScript.CheckGameOver();
         }
     }
 

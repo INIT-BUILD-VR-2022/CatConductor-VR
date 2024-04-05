@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Force : MonoBehaviour
 {
-    public CartStats cartStats;
+    //public CartStats cartStats;
     Vector3 ImpulseVector = new Vector3(0.0f, 5000.0f, 10000.0f);
     Vector3 spinVector = new Vector3(50000.0f, 50000.0f, 50000.0f);
 
     public rotation rotScript;
 
-    public float timescaled = 0.5f;
 
     void OnCollisionEnter(Collision other)
     {
@@ -27,14 +26,14 @@ public class Force : MonoBehaviour
     {
 
         
-        //statsScript.paused = true;
+        
         Time.timeScale = 0;
 
         yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .75f);
 
         Time.timeScale = 1;
 
-        //statsScript.paused = false;
+        
         transform.parent = null;
         GetComponent<Rigidbody>().AddForce(ImpulseVector, ForceMode.Force);
         GetComponent<Rigidbody>().AddTorque(spinVector, ForceMode.Force);

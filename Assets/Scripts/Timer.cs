@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
                 timevalue = 0;
                 if (GameOverScript != null)
                 {
-                    GameOverScript.TriggerGameOverEffects();
+                    GameOverScript.TriggerGameOverEffects(false);
                 }
             }
             DisplayTime(timevalue);
