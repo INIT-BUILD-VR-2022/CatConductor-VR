@@ -29,7 +29,7 @@ public class Force : MonoBehaviour
         //statsScript.paused = true;
         Time.timeScale = 0;
         
-        yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .75f);
+        yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .25f);
 
         Time.timeScale = 1;
 

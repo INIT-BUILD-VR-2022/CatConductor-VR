@@ -19,7 +19,7 @@ public class SpinningWheels : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rotationSpeed = rotScript.rotationSpeed * 8;
+        rotationSpeed = rotScript.rotationSpeed * 6;
         foreach (Transform wheel in wheels)
         {
             wheel.Rotate(rotationSpeed, 0f, 0f, Space.Self);

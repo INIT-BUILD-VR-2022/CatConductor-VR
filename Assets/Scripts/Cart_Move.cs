@@ -10,6 +10,10 @@ public class Cart_Move : MonoBehaviour
     public int maxRightPositions = 1; // Set the maximum right positions
     private int currentXPosition = 0; // Tracks the current position
 
+    //public Animator trainAnim;
+
+    //public rotation rotScript;
+
     bool canInput = true;
 
     // Start is called before the first frame update
@@ -22,7 +26,7 @@ public class Cart_Move : MonoBehaviour
     void FixedUpdate()
     {
 
-
+        //trainAnim.speed = rotScript.rotationSpeed; 
 
         // Move Left
         if (Input.GetKey(KeyCode.A) && canInput)
@@ -46,7 +50,7 @@ public class Cart_Move : MonoBehaviour
         {
             canInput = false;
             currentXPosition--;
-            transform.Translate(Vector3.left * 8f); // Move left by 4 units
+            transform.Translate(Vector3.left * 4f); // Move left by 4 units
             
             yield return new WaitForSeconds(.1f);
             canInput = true;
@@ -63,7 +67,7 @@ public class Cart_Move : MonoBehaviour
         {
             canInput = false;
             currentXPosition++;
-            transform.Translate(Vector3.right * 8f); // Move right by 4 units
+            transform.Translate(Vector3.right * 4f); // Move right by 4 units
             
             yield return new WaitForSeconds(.1f);
             canInput = true;
