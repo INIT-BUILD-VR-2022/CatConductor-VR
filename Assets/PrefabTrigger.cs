@@ -9,6 +9,8 @@ public class PrefabTrigger : MonoBehaviour
     private bool changeLevel = false;
     private int level = 0;
 
+    public Transform child;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -33,6 +35,8 @@ public class PrefabTrigger : MonoBehaviour
             {
                 Debug.Log("lol Activated");
                 other.GetComponent<MeshRenderer>().enabled = true;
+                child = other.transform.GetChild(0);
+                child.GetComponent<MeshRenderer>().enabled = true;
             }
         }
         Debug.Log("OnTriggerEnter is Active");
