@@ -8,6 +8,7 @@ TagManager:
   - MountainSegment
   - Grass
   - Volcano
+  - Desert
   layers:
   - Default
   - TransparentFX

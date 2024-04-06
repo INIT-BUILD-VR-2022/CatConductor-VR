@@ -6,7 +6,7 @@ public class PrefabTrigger : MonoBehaviour
 {
     public GameObject[] volcanicPrefab;
     public string[] tags;
-    public bool changeLevel = false;
+    private bool changeLevel = false;
     private int level = 0;
 
     private void Update()
