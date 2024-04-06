@@ -18,25 +18,9 @@ public class TrainSoundOffWhenHit : MonoBehaviour
     {
         if(collision.gameObject.tag == "HitBox")
         {
-            CancelInvoke(nameof(RestartSound));
-
-            if (trainAudioSource.isPlaying)
-            {
-                trainAudioSource.Stop();
-            }
-
             hitAudioSource.PlayOneShot(hitSound);
-
-            Invoke(nameof(RestartSound), .5f);
         }
     }
 
-    void RestartSound()
-    {
-        if (!trainAudioSource.isPlaying)
-        {
-            trainAudioSource.Play();
-            Debug.Log("Sound Resume.");
-        }
-    }
+  
 }
