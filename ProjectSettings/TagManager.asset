@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - HitBox
+  - MountainSegment
+  - Grass
+  - Volcano
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - Lever
   - SpeedUp
   - SlowDown
-  - 
+  - Mountain
   - 
   - 
   - 

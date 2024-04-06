@@ -18,6 +18,9 @@ public class DeleteObstacles : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if (other.CompareTag("HitBox"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
