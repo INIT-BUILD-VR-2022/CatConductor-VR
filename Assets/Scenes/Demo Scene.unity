@@ -719,8 +719,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7a0cb79ec552f334b8cde065067382df, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.412
+  m_Pitch: 0.66
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1565,7 +1565,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b6588c960a8a2b14381284d225c2780e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.277
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4480,6 +4480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hit Audio Source
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194254073066908804, guid: cbac17df990b907498dcc3add91874a6,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.234
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
