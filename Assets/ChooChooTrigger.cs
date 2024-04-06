@@ -21,17 +21,7 @@ public class ChooChooTrigger : MonoBehaviour
         // If the lever is within the speed trigger
         if (isWithinSpeedTrigger)
         {
-            if (!isLooping)
-            {
-                StartLoop();
-            }
-        }
-        else
-        {
-            if (isLooping)
-            {
-                StopLoop();
-            }
+            audioSource.PlayOneShot(chooChooSound);
         }
     }
 
