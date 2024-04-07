@@ -20,10 +20,7 @@ public class UI_enabler : MonoBehaviour
 
     //TODO:
     /*
-     * Ensure that the scale is equal to the ratio in the main scene (normal scale is 40) so do .04
-     * find way to get input for the ui enabling
-     * add functinality to buttons in the menu
-     * 
+     * add functinality to buttons in the menu 
      */
 
     // Start is called before the first frame update
