@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.UI;
-using UnityEngine.XR.Interaction.Toolkit.Filtering;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class UI_enabler : MonoBehaviour
@@ -13,15 +9,12 @@ public class UI_enabler : MonoBehaviour
     public LineRenderer LR;
     public XRInteractorLineVisual LV;
     public Canvas handUI;
+    public GameObject PausePanel;
+    public GameObject SettingPanel;
 
     private string input = "Vertical";
     public float threshHold = .6f;
     public float negativeThreshold = -.6f;
-
-    //TODO:
-    /*
-     * add functinality to buttons in the menu 
-     */
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +41,8 @@ public class UI_enabler : MonoBehaviour
         else if(Input.GetAxis(input) < negativeThreshold)
         {
             Time.timeScale = 1;
+            SettingPanel.SetActive(false);
+            PausePanel.SetActive(true);
             handUI.enabled = false;
             ray.enabled = false;
             LR.enabled = false;

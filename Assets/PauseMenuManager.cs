@@ -13,12 +13,9 @@ public class PauseMenuManager : MonoBehaviour
 
     private void Start()
     {
-        /*settingPanel = GameObject.Find("SettingPanel");
-        if(settingPanel == null)
-        {
-            Debug.Log("setting pannel was not found!!");
-        }*/
         volumeSlider = GetComponentInChildren<Slider>();
+        volumeSlider.value = .5f;
+
         settingPanel.SetActive(false);
     }
 
