@@ -705,8 +705,6 @@ MonoBehaviour:
   audioSource: {fileID: 251157850}
   chooChooSound: {fileID: 8300000, guid: 7a0cb79ec552f334b8cde065067382df, type: 3}
   speedTriggerTransform: {fileID: 972122118}
-  loopStart: 0
-  loopEnd: 2.5
 --- !u!82 &251157850
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2112,6 +2110,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b5aecc939fafcc3499f074d52b797b4f, type: 2}
+    - target: {fileID: 7176105063632941701, guid: 1af98e235074c6f40801f9a68f193d2b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 45.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176105063632941701, guid: 1af98e235074c6f40801f9a68f193d2b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 41.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176105063632941701, guid: 1af98e235074c6f40801f9a68f193d2b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 54.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176105063632941701, guid: 1af98e235074c6f40801f9a68f193d2b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.54
+      objectReference: {fileID: 0}
     - target: {fileID: 7398620056351607677, guid: 1af98e235074c6f40801f9a68f193d2b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

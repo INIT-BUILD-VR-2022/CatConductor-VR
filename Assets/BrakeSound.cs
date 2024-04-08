@@ -8,19 +8,22 @@ public class BrakeSound : MonoBehaviour
     public AudioClip brakeSound;
     public Transform slowTriggerTransform;
 
-    private bool isWithinSlowTrigger = false;
 
     // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (slowTriggerTransform != null && audioSource != null && brakeSound != null)
+        if (other.transform == slowTriggerTransform && audioSource != null && brakeSound != null && !audioSource.isPlaying)
         {
-            isWithinSlowTrigger = slowTriggerTransform.GetComponent<Collider>().bounds.Contains(transform.position);
+            audioSource.clip = brakeSound;
+            audioSource.Play();
+        }
+    }
 
-            if (isWithinSlowTrigger && !audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(brakeSound);
-            }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.transform == slowTriggerTransform)
+        {
+            audioSource.Stop();
         }
     }
 }
