@@ -14,7 +14,7 @@ public class Cart_Move : MonoBehaviour
 
     //public rotation rotScript;
 
-    bool canInput = true;
+    public bool canInput = true;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,7 @@ public class Cart_Move : MonoBehaviour
 
     }
 
-    IEnumerator CartSwitchLeft() 
+    public IEnumerator CartSwitchLeft() 
     {
         if (currentXPosition > maxLeftPositions)
         {
@@ -52,7 +52,7 @@ public class Cart_Move : MonoBehaviour
             currentXPosition--;
             transform.Translate(Vector3.left * 4f); // Move left by 4 units
             
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.3f);
             canInput = true;
                 
         }
@@ -60,7 +60,7 @@ public class Cart_Move : MonoBehaviour
 
     }
 
-    IEnumerator CartSwitchRight()
+    public IEnumerator CartSwitchRight()
     {
 
         if (currentXPosition < maxRightPositions)
@@ -69,7 +69,7 @@ public class Cart_Move : MonoBehaviour
             currentXPosition++;
             transform.Translate(Vector3.right * 4f); // Move right by 4 units
             
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.3f);
             canInput = true;
 
                 
