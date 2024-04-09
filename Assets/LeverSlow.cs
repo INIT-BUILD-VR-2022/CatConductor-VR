@@ -10,6 +10,7 @@ public class LevelSlow : MonoBehaviour
     //public Rotation rotScript; // Assuming Rotation is the correct class 
 
     public ParticleSystem brakeSparks;
+    public ParticleSystem trainSparks;
 
     void Start()
     {
@@ -26,10 +27,17 @@ public class LevelSlow : MonoBehaviour
     {
         rotScript.SlowDownRotation();
 
+        trainSparks.Play();
         brakeSparks.Play();
     }
 
-  
+    void OnTriggerExit(Collider other)
+    {
+        trainSparks.Stop();
+        brakeSparks.Stop();
+    }
+
+
 }
 
 
