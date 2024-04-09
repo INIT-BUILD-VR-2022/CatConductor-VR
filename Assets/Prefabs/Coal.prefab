@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3985512858213103033}
   m_Layer: 7
   m_Name: Coal
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
