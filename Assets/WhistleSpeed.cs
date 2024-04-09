@@ -6,7 +6,8 @@ public class WhistleSpeed : MonoBehaviour
 {
 
     public rotation rotScript;
-    
+    public AudioSource audioSource;
+    public AudioClip chooChooSound;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,11 @@ public class WhistleSpeed : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         rotScript.SpeedUpRotation();
+        
+    }
+
+    void OnTriggerEnter(Collider other) {
+        audioSource.PlayOneShot(chooChooSound);
     }
 }
 
