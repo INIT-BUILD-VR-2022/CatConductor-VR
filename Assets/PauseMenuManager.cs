@@ -22,7 +22,7 @@ public class PauseMenuManager : MonoBehaviour
     void Update()
     {
         AudioListener.volume = volumeSlider.value;
-        Debug.Log("The volume is at: " + AudioListener.volume);
+        //Debug.Log("The volume is at: " + AudioListener.volume);
     }
 
     public void goToMainMenu()
