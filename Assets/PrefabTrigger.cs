@@ -33,10 +33,11 @@ public class PrefabTrigger : MonoBehaviour
 
             if (other.CompareTag(tags[level]))
             {
-                Debug.Log("lol Activated");
                 other.GetComponent<MeshRenderer>().enabled = true;
-                child = other.transform.GetChild(0);
-                child.GetComponent<MeshRenderer>().enabled = true;
+                foreach (Transform child in other.transform)
+                {
+                    child.GetComponent<MeshRenderer>().enabled = true;
+                }
             }
         }
         Debug.Log("OnTriggerEnter is Active");
