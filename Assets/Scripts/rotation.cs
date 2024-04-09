@@ -47,7 +47,7 @@ public class rotation : MonoBehaviour
         }
 
 
-        transform.Rotate(0f, rotationSpeed, 0f, Space.World);
+        transform.Rotate(0f, rotationSpeed, 0f, Space.Self);
     }
 
     
