@@ -7,13 +7,13 @@ public class Health_Collision : MonoBehaviour
 {
     public int maxHealth = 1;
     public int currentHealth;
-    public HealthBar healthBar;
-    public GameOver gameOverScript;
+   // public HealthBar healthBar;
+   // public GameOver gameOverScript;
 
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
     void OnCollisionEnter(Collision other)
     {
@@ -26,7 +26,7 @@ public class Health_Collision : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        gameOverScript.CheckGameOver();
+        //healthBar.SetHealth(currentHealth);
+        //gameOverScript.CheckGameOver();
     }
 }
