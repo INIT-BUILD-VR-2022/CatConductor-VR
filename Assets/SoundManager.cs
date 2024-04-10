@@ -17,8 +17,8 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SFXS = GetComponentInChildren<Slider>(true);
-        musicS = GetComponentInChildren<Slider>(true);
+        //SFXS = GetComponentInChildren<Slider>(true);
+        //musicS = GetComponentInChildren<Slider>(true);
 
         SFXS.value = 1f;
         musicS.value = 1f;
