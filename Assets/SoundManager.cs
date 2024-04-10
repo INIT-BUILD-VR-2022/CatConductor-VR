@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource hitSound;
     public AudioSource breakSound;
     public AudioSource whistle;
+    public AudioSource lever;
     public AudioSource backgroundMusic;
 
     public Slider SFXS;
@@ -27,9 +28,9 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hitSound.volume = breakSound.volume = whistle.volume = SFXS.value;
+        hitSound.volume = breakSound.volume = whistle.volume = lever.volume = SFXS.value;
         backgroundMusic.volume = musicS.value;
         Debug.Log("The volume for SFX is : " + SFXS.value
-            + "\nThe volume for Music is : " + musicS.value);
+            + "\nThe volume for Music is : " + backgroundMusic.volume);
     }
 }
