@@ -13,7 +13,7 @@ public class Health_Collision : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        //healthBar.SetMaxHealth(maxHealth);
     }
     void OnCollisionEnter(Collision other)
     {
