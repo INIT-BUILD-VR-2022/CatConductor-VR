@@ -27,17 +27,14 @@ public class PrefabTrigger : MonoBehaviour
         {
             if (other.CompareTag(tags[level - 1]))
             {
-                Debug.Log("Destroy Activated");
                 Destroy(other.gameObject);
             }
 
             if (other.CompareTag(tags[level]))
             {
                 other.GetComponent<MeshRenderer>().enabled = true;
-                foreach (Transform child in other.transform)
-                {
-                    child.GetComponent<MeshRenderer>().enabled = true;
-                }
+                child = other.transform.GetChild(0);
+                child.gameObject.SetActive(true);
             }
         }
         Debug.Log("OnTriggerEnter is Active");
