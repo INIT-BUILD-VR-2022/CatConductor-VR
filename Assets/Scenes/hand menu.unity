@@ -6572,36 +6572,12 @@ Transform:
   - {fileID: 1899694745}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1704414540 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8987830409278681299, guid: 305d096493a61de4f85a4d3b047238c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7654907104667795011}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1746795390 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6298814991297686036, guid: 305d096493a61de4f85a4d3b047238c1,
     type: 3}
   m_PrefabInstance: {fileID: 7654907104667795011}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1764944391 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8654041942414646815, guid: 305d096493a61de4f85a4d3b047238c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7654907104667795011}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1842928107
 GameObject:
   m_ObjectHideFlags: 0
@@ -7349,11 +7325,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HandMenuUI Vr Version
       objectReference: {fileID: 0}
-    - target: {fileID: 2562750490917006631, guid: 305d096493a61de4f85a4d3b047238c1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2639414644930888860, guid: 305d096493a61de4f85a4d3b047238c1,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -7362,11 +7333,6 @@ PrefabInstance:
     - target: {fileID: 2639414644930888860, guid: 305d096493a61de4f85a4d3b047238c1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655877663711141497, guid: 305d096493a61de4f85a4d3b047238c1,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4801500515299370369, guid: 305d096493a61de4f85a4d3b047238c1,
@@ -7379,16 +7345,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4990234288379328183, guid: 305d096493a61de4f85a4d3b047238c1,
-        type: 3}
-      propertyPath: SFXS
-      value: 
-      objectReference: {fileID: 1704414540}
-    - target: {fileID: 4990234288379328183, guid: 305d096493a61de4f85a4d3b047238c1,
-        type: 3}
-      propertyPath: musicS
-      value: 
-      objectReference: {fileID: 1764944391}
     - target: {fileID: 4990234288379328183, guid: 305d096493a61de4f85a4d3b047238c1,
         type: 3}
       propertyPath: whistle
@@ -7427,7 +7383,7 @@ PrefabInstance:
     - target: {fileID: 5772612288433975333, guid: 305d096493a61de4f85a4d3b047238c1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6298814991297686036, guid: 305d096493a61de4f85a4d3b047238c1,
         type: 3}
@@ -7547,12 +7503,7 @@ PrefabInstance:
     - target: {fileID: 6861314902182448324, guid: 305d096493a61de4f85a4d3b047238c1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654041942414646815, guid: 305d096493a61de4f85a4d3b047238c1,
-        type: 3}
-      propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8750246984019766307, guid: 305d096493a61de4f85a4d3b047238c1,
         type: 3}
@@ -7569,11 +7520,6 @@ PrefabInstance:
       propertyPath: Right_Controller
       value: 
       objectReference: {fileID: 351781926}
-    - target: {fileID: 8987830409278681299, guid: 305d096493a61de4f85a4d3b047238c1,
-        type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
