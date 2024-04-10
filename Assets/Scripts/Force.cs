@@ -11,11 +11,15 @@ public class Force : MonoBehaviour
   
     
 
+    [SerializeField] ParticleSystem collectParticle = null;
+    
     void OnCollisionEnter(Collision other)
     {
+        collectParticle = other.gameObject.GetComponent<ParticleSystem>();
 
         if(other.gameObject.tag == "Player")
         {
+            Collect();
             StartCoroutine(Collide());
         }
         
@@ -24,8 +28,6 @@ public class Force : MonoBehaviour
 
     IEnumerator Collide()
     {
-
-
         //statsScript.paused = true;
         Time.timeScale = 0;
         
@@ -43,4 +45,9 @@ public class Force : MonoBehaviour
         yield return new WaitForSecondsRealtime(3f);
         Destroy(gameObject);
     }
+
+    public void Collect(){
+        collectParticle.Play();
+    }
 }
+
