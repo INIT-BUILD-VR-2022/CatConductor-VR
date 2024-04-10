@@ -1257,6 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitAudioSource: {fileID: 281553009}
   hitSound: {fileID: 8300000, guid: 466948ab5577fdb468919cfa892a2c10, type: 3}
+  catSound: {fileID: 0}
 --- !u!1001 &530960917
 PrefabInstance:
   m_ObjectHideFlags: 0
