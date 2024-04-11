@@ -36,7 +36,7 @@ public class CartStats : MonoBehaviour
             else if(isProtected){
                 isProtected = false;
                 forcefield.SetActive(false);
-                hitAudioSource.PlayOneShot(hitSound);
+                hitAudioSource.PlayOneShot(protectSound);
             }
             else{
                 hp -= 1; 
