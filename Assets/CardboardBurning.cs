@@ -1,25 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Coal : MonoBehaviour
+public class CardboardBurning : MonoBehaviour
 {
-    public Animator coalAnimator; // Reference to the burning animation
+    public Animator CBAnimator; // Reference to the burning animation
     public ParticleSystem smokeParticles; // Reference to the smoke particle system
     public ParticleSystem fireParticles; // Reference to the fire particle system
 
-    private bool isBurning = false; // Flag to track if the coal is burning
+    public HealthBar HP;// Reference to the HealthBar script
+
+  
+
+    private bool isBurning = false; // Flag to track if the CB is burning
 
     private void OnTriggerEnter(Collider other)
     {
+        
+        Debug.Log("HELP I'M TRIGGERING THE COLLISION >:((((((");
         if (!isBurning)
         {
-            Furnace furnace = other.GetComponent<Furnace>(); 
+            Furnace furnace = other.GetComponent<Furnace>();
+            
             if (furnace != null)
             {
-                furnace.SetCoalReference(this); // Pass a reference to the coal object
+                furnace.SetCBReference(this); // Pass a reference to the CB object
                 furnace.StartBurning();
-                Debug.Log("Coal added to furnace.");
+                Debug.Log("CB added to furnace.");
+       
                 
-                coalAnimator.SetBool("Burning", true);
+                CBAnimator.SetBool("Burning", true);
 
 
                 // Activate the particle systems for fire and smoke
@@ -48,7 +58,7 @@ public class Coal : MonoBehaviour
             fireParticles.Stop();
         }
 
-        // Destroy the coal object
+        // Destroy the CB object
         Destroy(gameObject);
     }
 

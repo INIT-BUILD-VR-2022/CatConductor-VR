@@ -12,16 +12,27 @@ public class CartStats : MonoBehaviour
     public HealthBar healthBar;
     public int currentHealth;
     public GameOver gameOverScript;
+    public bool isProtected = false;
+
+    public GameObject forcefield;
 
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("HitBox"))
         {
-            hp -= 1; 
-            currentHealth = hp;//reduce hp by 1
-            healthBar.SetHealth(currentHealth);
-            Debug.Log("HP: " + hp);
+            if (!isProtected)
+            {
+                hp -= 1;
+                currentHealth = hp;//reduce hp by 1
+                healthBar.SetHealth(currentHealth);
+                Debug.Log("HP: " + hp);
+            }
+            else
+            {
+                isProtected = false;
+                forcefield.SetActive(false);
+            }
 
             if (hp <= 0)
             {

@@ -6,15 +6,13 @@ public class GrabOffTrack : MonoBehaviour
 {
     public void Detach(){
         transform.parent = null;
-    }
-
-    public void Destroy(){
         StartCoroutine(LongGoodbye());
     }
 
-    IEnumerator LongGoodbye(){
+ 
 
-        yield return new WaitForSeconds(5f);
+    IEnumerator LongGoodbye(){
+        yield return new WaitForSeconds(15f);
         Destroy(gameObject);
     }
 }
