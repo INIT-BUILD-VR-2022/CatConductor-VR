@@ -10870,7 +10870,7 @@ MonoBehaviour:
   trainAnim: {fileID: 1999020825}
   hitAudioSource: {fileID: 281553009}
   hitSound: {fileID: 8300000, guid: 8b45d68041150c94695e201c2a222c20, type: 3}
-  catSound: {fileID: 0}
+  protectSound: {fileID: 0}
 --- !u!114 &374543711470375063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20340,6 +20340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Smoke_Train_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1251872478732274, guid: 21bafee7e1b54324fb1908a9da85e17e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4973522390474412, guid: 21bafee7e1b54324fb1908a9da85e17e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6666667
@@ -20362,7 +20366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4973522390474412, guid: 21bafee7e1b54324fb1908a9da85e17e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.522996
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 4973522390474412, guid: 21bafee7e1b54324fb1908a9da85e17e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20394,8 +20398,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198649275969257082, guid: 21bafee7e1b54324fb1908a9da85e17e,
         type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198649275969257082, guid: 21bafee7e1b54324fb1908a9da85e17e,
+        type: 3}
+      propertyPath: cullingMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198649275969257082, guid: 21bafee7e1b54324fb1908a9da85e17e,
+        type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198649275969257082, guid: 21bafee7e1b54324fb1908a9da85e17e,
+        type: 3}
+      propertyPath: ringBufferMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 198649275969257082, guid: 21bafee7e1b54324fb1908a9da85e17e,
         type: 3}
