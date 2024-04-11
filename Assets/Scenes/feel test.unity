@@ -10867,10 +10867,11 @@ MonoBehaviour:
   isProtected: 1
   forcefield: {fileID: 1775681402}
   invincFramesTime: 2
+  immune: 0
   trainAnim: {fileID: 1999020825}
   hitAudioSource: {fileID: 281553009}
   hitSound: {fileID: 8300000, guid: 8b45d68041150c94695e201c2a222c20, type: 3}
-  catSound: {fileID: 0}
+  protectSound: {fileID: 0}
 --- !u!114 &374543711470375063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10922,9 +10923,9 @@ MonoBehaviour:
   baseSpawnTimerModifier: 1.2
   spawnLocations: []
   smallObstacle:
-  - {fileID: 3607115701355128687, guid: dc77304f718c0db469b6f16b1efa7794, type: 3}
-  - {fileID: 5856510478565898887, guid: 1381edea7e6942f4393f194805b54883, type: 3}
-  - {fileID: 5810698795101446849, guid: 213eb116b86925444ab8924189dceb54, type: 3}
+  - {fileID: 194643100399569090, guid: 6d7cd80a71defcf489ed29fd9c7ad8a1, type: 3}
+  - {fileID: 194643100399569090, guid: 6d7cd80a71defcf489ed29fd9c7ad8a1, type: 3}
+  - {fileID: 194643100399569090, guid: 6d7cd80a71defcf489ed29fd9c7ad8a1, type: 3}
   - {fileID: 3185893579464787780, guid: ade4088cb47204b4eae3ce493bddcc84, type: 3}
   - {fileID: 3083572839626932099, guid: 3bdb413379d61a34683b72faac3af8c5, type: 3}
   - {fileID: 8245399641274446029, guid: 9e002b7cc3cb96f409b7f702995a228e, type: 3}

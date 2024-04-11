@@ -17,7 +17,7 @@ public class CartStats : MonoBehaviour
     public GameObject forcefield;
 
     public float invincFramesTime = 0;
-    bool immune = false;
+    public bool immune = false;
 
     public Animator trainAnim;
 
