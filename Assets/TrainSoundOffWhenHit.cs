@@ -5,9 +5,7 @@ using UnityEngine;
 public class TrainSoundOffWhenHit : MonoBehaviour
 {
     private AudioSource trainAudioSource;
-    public AudioSource hitAudioSource;
-    public AudioClip hitSound;
-    public AudioClip catSound;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +15,7 @@ public class TrainSoundOffWhenHit : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "HitBox")
-        {
-            hitAudioSource.PlayOneShot(hitSound);
-            hitAudioSource.PlayOneShot(catSound);
-        }
+        
     }
 
   

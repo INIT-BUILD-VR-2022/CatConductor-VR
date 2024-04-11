@@ -28,14 +28,14 @@ public class Force : MonoBehaviour
 
     IEnumerator Collide()
     {
-        //statsScript.paused = true;
+        /*
         Time.timeScale = 0;
         
         yield return new WaitForSecondsRealtime(rotScript.rotationSpeed * .25f);
 
         Time.timeScale = 1;
 
-        //statsScript.paused = false;
+        //statsScript.paused = false;*/
         transform.parent = null;
         GetComponent<Rigidbody>().AddForce(ImpulseVector, ForceMode.Force);
         GetComponent<Rigidbody>().AddTorque(spinVector, ForceMode.Force);

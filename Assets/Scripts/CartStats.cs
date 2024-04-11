@@ -21,6 +21,10 @@ public class CartStats : MonoBehaviour
 
     public Animator trainAnim;
 
+    public AudioSource hitAudioSource;
+    public AudioClip hitSound;
+    public AudioClip protectSound;
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -32,6 +36,7 @@ public class CartStats : MonoBehaviour
             else if(isProtected){
                 isProtected = false;
                 forcefield.SetActive(false);
+                hitAudioSource.PlayOneShot(hitSound);
             }
             else{
                 hp -= 1; 
@@ -41,6 +46,12 @@ public class CartStats : MonoBehaviour
 
                 trainAnim.Play("Base Layer.HitTrain");
                 StartCoroutine(Recovery());
+
+                if(collision.gameObject.tag == "HitBox")
+                {
+                    hitAudioSource.PlayOneShot(hitSound);
+                    
+                }
 
             
                 if (hp <= 0)
