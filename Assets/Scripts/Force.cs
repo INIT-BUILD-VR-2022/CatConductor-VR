@@ -16,6 +16,7 @@ public class Force : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         collectParticle = other.gameObject.GetComponent<ParticleSystem>();
+        
 
         if(other.gameObject.tag == "Player")
         {
