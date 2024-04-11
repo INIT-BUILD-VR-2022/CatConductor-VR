@@ -13,21 +13,41 @@ public class CartStats : MonoBehaviour
     public int currentHealth;
     public GameOver gameOverScript;
 
+    public float invincFramesTime = 0;
+    bool immune = false;
+
+    public Animator trainAnim;
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("HitBox"))
         {
-            hp -= 1; 
-            currentHealth = hp;//reduce hp by 1
-            healthBar.SetHealth(currentHealth);
-            Debug.Log("HP: " + hp);
-
-            if (hp <= 0)
-            {
-                Destroy(collision.gameObject.GetComponent<Force>());
+            if(immune){
+                return;
             }
-            gameOverScript.CheckGameOver();
+            else
+            {
+                hp -= 1; 
+                currentHealth = hp;//reduce hp by 1
+                healthBar.SetHealth(currentHealth);
+                Debug.Log("HP: " + hp);
+
+                trainAnim.Play("Base Layer.HitTrain");
+                StartCoroutine(Recovery());
+
+            
+                if (hp <= 0)
+                {
+                    Destroy(collision.gameObject.GetComponent<Force>());
+                }else{
+
+                }
+
+
+
+                gameOverScript.CheckGameOver();
+            }
         }
     }
 
@@ -42,6 +62,15 @@ public class CartStats : MonoBehaviour
         {
             timer.timevalue = initialTime;
         }
+    }
+
+    IEnumerator Recovery(){
+
+        immune = true;
+        trainAnim.SetBool("Immune", true);
+        yield return new WaitForSeconds(invincFramesTime);
+        immune = false;
+        trainAnim.SetBool("Immune", false);
     }
 
 }

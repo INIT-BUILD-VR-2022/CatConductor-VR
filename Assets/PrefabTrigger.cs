@@ -8,6 +8,7 @@ public class PrefabTrigger : MonoBehaviour
     public string[] tags;
     private bool changeLevel = false;
     private int level = 0;
+    private int prevLevel = -1;
 
     public Transform child;
 
@@ -24,6 +25,11 @@ public class PrefabTrigger : MonoBehaviour
     public void changeTerrian()
     {
         level++;
+        prevLevel = level - 1;
+
+        if(level >= tags.Length){
+            level = 0;
+        }
         changeLevel = true;
     }
 
@@ -31,9 +37,11 @@ public class PrefabTrigger : MonoBehaviour
     {
         if (changeLevel)
         {
-            if (other.CompareTag(tags[level - 1]))
+            if (other.CompareTag(tags[prevLevel]))
             {
-                Destroy(other.gameObject);
+                other.GetComponent<MeshRenderer>().enabled = false;
+                child = other.transform.GetChild(0);
+                child.gameObject.SetActive(false);
             }
 
             if (other.CompareTag(tags[level]))
@@ -43,8 +51,6 @@ public class PrefabTrigger : MonoBehaviour
                 child.gameObject.SetActive(true);
             }
         }
-        Debug.Log("OnTriggerEnter is Active");
-        Debug.Log("level was: " + (level - 1));
-        Debug.Log("level is: " + level);
+        
     }
 }
