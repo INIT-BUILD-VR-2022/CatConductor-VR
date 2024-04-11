@@ -12,6 +12,9 @@ public class CartStats : MonoBehaviour
     public HealthBar healthBar;
     public int currentHealth;
     public GameOver gameOverScript;
+    public bool isProtected = false;
+
+    public GameObject forcefield;
 
     public float invincFramesTime = 0;
     bool immune = false;
@@ -26,8 +29,11 @@ public class CartStats : MonoBehaviour
             if(immune){
                 return;
             }
-            else
-            {
+            else if(isProtected){
+                isProtected = false;
+                forcefield.SetActive(false);
+            }
+            else{
                 hp -= 1; 
                 currentHealth = hp;//reduce hp by 1
                 healthBar.SetHealth(currentHealth);
@@ -40,8 +46,6 @@ public class CartStats : MonoBehaviour
                 if (hp <= 0)
                 {
                     Destroy(collision.gameObject.GetComponent<Force>());
-                }else{
-
                 }
 
 
