@@ -21,6 +21,12 @@ public class PrefabTrigger : MonoBehaviour
         }
     }
 
+    public void changeTerrian()
+    {
+        level++;
+        changeLevel = true;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (changeLevel)
