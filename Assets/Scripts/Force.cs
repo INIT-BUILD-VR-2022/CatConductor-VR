@@ -8,21 +8,19 @@ public class Force : MonoBehaviour
     Vector3 spinVector = new Vector3(50000.0f, 50000.0f, 50000.0f);
 
     public rotation rotScript;
-
-    CartStats CPunique;
+  
+    
 
     [SerializeField] ParticleSystem collectParticle = null;
-
     
     void OnCollisionEnter(Collision other)
     {
         collectParticle = other.gameObject.GetComponent<ParticleSystem>();
-        CPunique = other.gameObject.GetComponent<CartStats>();
+        
 
-        if (other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player")
         {
-                Collect();
-
+            Collect();
             StartCoroutine(Collide());
         }
         
@@ -49,13 +47,8 @@ public class Force : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Collect()
-    {
-        if (CPunique.immune == false && CPunique.isProtected == false)
-        {
-            collectParticle.Play();
-        }
+    public void Collect(){
+        collectParticle.Play();
     }
-
 }
 
