@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 6825021379362768629}
   - component: {fileID: 8856455205933208406}
   m_Layer: 5
-  m_Name: HandMenuUI Vr Version
+  m_Name: OUTDATEDHandMenuUI Vr Version OUTDATED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,6 +882,7 @@ MonoBehaviour:
   hitSound: {fileID: 0}
   breakSound: {fileID: 0}
   whistle: {fileID: 0}
+  lever: {fileID: 0}
   backgroundMusic: {fileID: 0}
   SFXS: {fileID: 8987830409278681299}
   musicS: {fileID: 8654041942414646815}
