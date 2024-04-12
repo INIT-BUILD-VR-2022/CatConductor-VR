@@ -9,8 +9,11 @@ public class Furnace : MonoBehaviour
     public bool isBurning = false; // Flag to track if the furnace is burning
 
     private Coal coal; // Reference to the coal object
+    private CardboardBurning cardboard;// reference to the cardboard object
 
     public float amountOfTimeAdded;
+
+    public CartStats cartS;//Reference to the CartStats Script for modifying health accessibility
 
     public Timer timer;
 
@@ -23,6 +26,7 @@ public class Furnace : MonoBehaviour
     public void StartBurning()
     {
         timer.timevalue += amountOfTimeAdded;
+        
         StartCoroutine(Burn());
         
     }
@@ -30,8 +34,17 @@ public class Furnace : MonoBehaviour
     // Coroutine to handle the burning process
     IEnumerator Burn()
     {
+        Debug.Log("HELP I'M BURNING");
+
         isBurning = true; // Set the furnace to burning state
         currentBurnTime = 0f; // Reset current burn time
+
+        if (cardboard != null)
+        {
+            cartS.isProtected = true;
+            cartS.forcefield.SetActive(true);
+        }
+        
         while (currentBurnTime < burnTime)
         {
             currentBurnTime += Time.deltaTime; // Increment the current burn time
@@ -43,12 +56,23 @@ public class Furnace : MonoBehaviour
         {
             coal.OnBurningComplete(); // Call OnBurningComplete() of the coal object
         }
+        if(cardboard != null)
+        {
+            cardboard.OnBurningComplete();//  Call OnBurningComplete() of the coal object
+        }
+
     }
 
     // Function to set the coal reference
     public void SetCoalReference(Coal coalObject)
     {
         coal = coalObject;
+    }
+
+    // Function to set the cardboard reference
+    public void SetCBReference(CardboardBurning CB)
+    {
+        cardboard = CB;
     }
 }
 

@@ -43,7 +43,7 @@ public class spawningObstacles : MonoBehaviour
         for(int i = 0; i < eventsToSpawn.Count; i++){
             totalChance += eventsToSpawn[i];
             eventsToSpawn[i] = totalChance;
-            Debug.Log(eventsToSpawn[i]);
+           
         }
 
         StartCoroutine(Spawner(baseSpawnTimer));

@@ -12,11 +12,18 @@ public class CartStats : MonoBehaviour
     public HealthBar healthBar;
     public int currentHealth;
     public GameOver gameOverScript;
+    [HideInInspector] public bool isProtected = false;
+
+    public GameObject forcefield;
 
     public float invincFramesTime = 0;
-    bool immune = false;
+    public bool immune = false;
 
     public Animator trainAnim;
+
+    public AudioSource hitAudioSource;
+    public AudioClip hitSound;
+    public AudioClip protectSound;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -26,8 +33,12 @@ public class CartStats : MonoBehaviour
             if(immune){
                 return;
             }
-            else
-            {
+            else if(isProtected){
+                isProtected = false;
+                forcefield.SetActive(false);
+                hitAudioSource.PlayOneShot(protectSound);
+            }
+            else{
                 hp -= 1; 
                 currentHealth = hp;//reduce hp by 1
                 healthBar.SetHealth(currentHealth);
@@ -36,12 +47,16 @@ public class CartStats : MonoBehaviour
                 trainAnim.Play("Base Layer.HitTrain");
                 StartCoroutine(Recovery());
 
+                if(collision.gameObject.tag == "HitBox")
+                {
+                    hitAudioSource.PlayOneShot(hitSound);
+                    
+                }
+
             
                 if (hp <= 0)
                 {
                     Destroy(collision.gameObject.GetComponent<Force>());
-                }else{
-
                 }
 
 
