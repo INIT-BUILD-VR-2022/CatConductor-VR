@@ -13,6 +13,8 @@ public class PointForScreen : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        scoreText.text = string.Format("0000", score.score);
+        scoreText.text = score.score.ToString();
+        Debug.Log("The score is " + scoreText.text);
+
     }
 }
