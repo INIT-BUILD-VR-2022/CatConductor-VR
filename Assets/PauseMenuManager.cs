@@ -27,6 +27,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void goToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 
@@ -40,5 +41,11 @@ public class PauseMenuManager : MonoBehaviour
     {
         pausePanel.SetActive(true);
         settingPanel.SetActive(false);
+    }
+
+    public void play()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("feel test");
     }
 }
