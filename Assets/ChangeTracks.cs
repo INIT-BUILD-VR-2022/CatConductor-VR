@@ -55,16 +55,16 @@ using UnityEngine;
 public class ChangeTracks : MonoBehaviour
 {
     public Cart_Move cartMove;
-    private Animator leftBellAnimator;
-    private Animator rightBellAnimator;
+    public Animator leftBellAnimator;
+    public Animator rightBellAnimator;
     public AudioSource bellSound;
     public AudioSource bellSound2;
 
     private void Start()
     {
         // Assuming the bell is a direct child of the collider game objects
-        leftBellAnimator = GameObject.FindGameObjectWithTag("LeftSide").GetComponentInChildren<Animator>();
-        rightBellAnimator = GameObject.FindGameObjectWithTag("RightSide").GetComponentInChildren<Animator>();
+        //leftBellAnimator = GameObject.FindGameObjectWithTag("LeftSide").GetComponentInChildren<Animator>();
+        //rightBellAnimator = GameObject.FindGameObjectWithTag("RightSide").GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -75,7 +75,7 @@ public class ChangeTracks : MonoBehaviour
         {
             Debug.Log("Lever entered Left Trigger");
             // Trigger the bell animation
-            leftBellAnimator.SetTrigger("Ring");
+           // leftBellAnimator.SetTrigger("Ring");
             //bellSound.Play();
             // Additional functionality
             StartCoroutine(cartMove.CartSwitchLeft());
@@ -84,7 +84,7 @@ public class ChangeTracks : MonoBehaviour
         {
             Debug.Log("Lever entered Right Trigger");
             // Trigger the bell animation
-            rightBellAnimator.SetTrigger("Ring");
+            //rightBellAnimator.SetTrigger("Ring");
             //bellSound2.Play();
             // Additional functionality
             StartCoroutine(cartMove.CartSwitchRight());
