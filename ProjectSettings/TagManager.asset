@@ -9,6 +9,11 @@ TagManager:
   - Grass
   - Volcano
   - Desert
+  - RightSide
+  - LeftSide
+  - BrakeLever
+  - Tunnel
+  - Gem
   layers:
   - Default
   - TransparentFX
