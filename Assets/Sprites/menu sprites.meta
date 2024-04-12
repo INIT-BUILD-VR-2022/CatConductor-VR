@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Gem Mountain.meta
+guid: e94afffbe5272764bbf940e058c43759
+========
 guid: 12f0cec8d894a2a438b8713b5de32e65
+>>>>>>>> main:Assets/Sprites/menu sprites.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
