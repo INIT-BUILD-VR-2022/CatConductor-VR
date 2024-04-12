@@ -18,7 +18,7 @@ public class Coal : MonoBehaviour
                 furnace.SetCoalReference(this); // Pass a reference to the coal object
                 furnace.StartBurning();
                 Debug.Log("Coal added to furnace.");
-                isBurning = true; 
+                
                 coalAnimator.SetBool("Burning", true);
 
 

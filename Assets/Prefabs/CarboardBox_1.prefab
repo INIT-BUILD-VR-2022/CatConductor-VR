@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 6828223475135235794}
   - component: {fileID: -62805618385372613}
   - component: {fileID: 6814019913221362923}
+  - component: {fileID: 2119843529393236181}
+  - component: {fileID: -3522099622362072064}
   m_Layer: 7
   m_Name: CarboardBox_1
   m_TagString: HitBox
@@ -186,25 +188,13 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6814019913221362923}
-        m_TargetAssemblyTypeName: GrabOffTrack, Assembly-CSharp
-        m_MethodName: Detach
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6814019913221362923}
         m_TargetAssemblyTypeName: GrabOffTrack, Assembly-CSharp
-        m_MethodName: Destroy
+        m_MethodName: Detach
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -324,6 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3027b69af1c6cd64f969115db99582d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotScript: {fileID: 0}
+  collectParticle: {fileID: 0}
 --- !u!114 &6814019913221362923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,3 +328,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c44d2d3bcd7ccb4cb2c7ae0ca6908b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2119843529393236181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814870094968927821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2833143f4299c4e9a6890e1cf0cbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CBAnimator: {fileID: -3522099622362072064}
+  smokeParticles: {fileID: 0}
+  fireParticles: {fileID: 0}
+  HP: {fileID: 0}
+  cartS: {fileID: 0}
+--- !u!95 &-3522099622362072064
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7814870094968927821}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e97d712cb4e9d3f4f9e8e595f533f73a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
