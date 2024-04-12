@@ -12,7 +12,7 @@ public class CartStats : MonoBehaviour
     public HealthBar healthBar;
     public int currentHealth;
     public GameOver gameOverScript;
-    public bool isProtected = false;
+    [HideInInspector] public bool isProtected = false;
 
     public GameObject forcefield;
 
