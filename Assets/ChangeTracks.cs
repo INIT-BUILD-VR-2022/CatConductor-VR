@@ -57,6 +57,8 @@ public class ChangeTracks : MonoBehaviour
     public Cart_Move cartMove;
     private Animator leftBellAnimator;
     private Animator rightBellAnimator;
+    public AudioSource bellSound;
+    public AudioSource bellSound2;
 
     private void Start()
     {
@@ -74,6 +76,7 @@ public class ChangeTracks : MonoBehaviour
             Debug.Log("Lever entered Left Trigger");
             // Trigger the bell animation
             leftBellAnimator.SetTrigger("Ring");
+            bellSound.Play();
             // Additional functionality
             StartCoroutine(cartMove.CartSwitchLeft());
         }
@@ -82,6 +85,7 @@ public class ChangeTracks : MonoBehaviour
             Debug.Log("Lever entered Right Trigger");
             // Trigger the bell animation
             rightBellAnimator.SetTrigger("Ring");
+            bellSound2.Play();
             // Additional functionality
             StartCoroutine(cartMove.CartSwitchRight());
         }
