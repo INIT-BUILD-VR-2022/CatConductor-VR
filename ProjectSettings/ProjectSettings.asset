@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Cavern Rush
+  companyName: FIU INIT Build 2024
+  productName: Cattrax
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -139,8 +139,11 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.1.0
-  preloadedAssets: []
+  bundleVersion: 0.9
+  preloadedAssets:
+  - {fileID: -5345454945327440427, guid: 9ee165b020fdff44f9b5f8d62df8b1a0, type: 2}
+  - {fileID: 11400000, guid: 5a94a506ccd25834f956f1c5d8b2b1d2, type: 2}
+  - {fileID: 8545832515878824698, guid: 335cb6c6b41e73944ba537c5d2c531cd, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
