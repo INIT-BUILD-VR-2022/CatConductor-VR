@@ -12896,7 +12896,7 @@ MonoBehaviour:
   timer: {fileID: 806342718}
   hp: 10
   score: 0
-  initialTime: 100
+  initialTime: 10
   healthBar: {fileID: 806342717}
   currentHealth: 0
   gameOverScript: {fileID: 2158302285349175024}
@@ -20416,6 +20416,7 @@ MonoBehaviour:
   timer: {fileID: 806342718}
   rb: {fileID: 7170658513301467569}
   music: {fileID: 8492167369875847603}
+  rotation: {fileID: 36926378290154864}
 --- !u!23 &2166317288540208582
 MeshRenderer:
   m_ObjectHideFlags: 0

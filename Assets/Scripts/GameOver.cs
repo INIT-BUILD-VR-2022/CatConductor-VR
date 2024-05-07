@@ -9,7 +9,8 @@ public class GameOver : MonoBehaviour
     public Timer timer;
     public Rigidbody rb;
     public AudioSource music;
-
+    public rotation rotation;
+    private float slowDownRate;
 
     public void CheckGameOver()
     {
@@ -45,14 +46,20 @@ public class GameOver : MonoBehaviour
 
     private IEnumerator SlowMotion()
     {
-        for (float t = 0; t < 2f; t += Time.unscaledDeltaTime)
+        /*for (float t = 0; t < 2f; t += Time.unscaledDeltaTime)
         {
             Time.timeScale = Mathf.Lerp(1f, 0.1f, t / 2f);
             yield return null;
         }
 
-        Time.timeScale = 0;
+        Time.timeScale = 0;*/
 
+        while (rotation.rotationSpeed > 0)
+        {
+            rotation.rotationSpeed -= 0.005f * Time.deltaTime;
+            yield return null;
+            rotation.rotationSpeed = Mathf.Max(0, rotation.rotationSpeed);
+        }
     }
 
 
@@ -85,6 +92,8 @@ public class GameOver : MonoBehaviour
         
     }
 }
+
+    
 
 
     //animate the train flying off
