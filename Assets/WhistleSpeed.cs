@@ -23,8 +23,11 @@ public class WhistleSpeed : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        rotScript.SpeedUpRotation();
-        
+        //Test if code works, its suppose to prevent whistle from speeding up if the game is in gameOver state
+        if (rotScript.rotationSpeed != 0)
+        {
+            rotScript.SpeedUpRotation();
+        }   
     }
 
     /*void OnTriggerEnter(Collider other) {
