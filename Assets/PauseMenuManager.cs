@@ -46,6 +46,6 @@ public class PauseMenuManager : MonoBehaviour
     public void play()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("feel test");
+        SceneManager.LoadScene("Main Game");
     }
 }

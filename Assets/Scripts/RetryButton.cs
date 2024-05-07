@@ -34,6 +34,6 @@ public class RetryButton : MonoBehaviour
 
 
         //Reload the current scene to restart the game
-        SceneManager.LoadScene("feel test");
+        SceneManager.LoadScene("Main Game");
     }
 }

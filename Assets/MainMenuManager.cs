@@ -14,6 +14,6 @@ public class MainMenuManager : MonoBehaviour
 
     public void play()
     {
-        SceneManager.LoadScene("feel test");
+        SceneManager.LoadScene("Main Game");
     }
 }
