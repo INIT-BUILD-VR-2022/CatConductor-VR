@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverScreen;
@@ -11,6 +12,12 @@ public class GameOver : MonoBehaviour
     public AudioSource music;
     public rotation rotation;
     private float slowDownRate;
+    public bool IsGameover = false;
+
+
+    public XRRayInteractor ray;
+    public LineRenderer LR;
+    public XRInteractorLineVisual LV;
 
     public void CheckGameOver()
     {
@@ -38,29 +45,20 @@ public class GameOver : MonoBehaviour
         if(killed)
         {
             StartCoroutine(Death());
-        }else{
-            //this slowdown looks a bit jank, it should be rotation slowing not the timescale
-            StartCoroutine(SlowMotion());
         }
+        
+        rotation.SlowDownRotationToZero();
+        IsGameover = true;
+
+        ray.enabled = true;
+        LR.enabled = true;
+        LV.enabled = true;
+
     }
 
-    private IEnumerator SlowMotion()
-    {
-        /*for (float t = 0; t < 2f; t += Time.unscaledDeltaTime)
-        {
-            Time.timeScale = Mathf.Lerp(1f, 0.1f, t / 2f);
-            yield return null;
-        }
 
-        Time.timeScale = 0;*/
 
-        while (rotation.rotationSpeed > 0)
-        {
-            rotation.rotationSpeed -= 0.005f * Time.deltaTime;
-            yield return null;
-            rotation.rotationSpeed = Mathf.Max(0, rotation.rotationSpeed);
-        }
-    }
+
 
 
     private IEnumerator Death(){
@@ -87,8 +85,7 @@ public class GameOver : MonoBehaviour
         
 
         yield return new WaitForSecondsRealtime(3f);
-        //Probably replace this with a function that sets time scale to 1 but stops the rotation of the island, this looks sorta jank
-        StartCoroutine(SlowMotion());
+        
         
     }
 }

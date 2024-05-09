@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class rotation : MonoBehaviour
 {
+    public GameOver gameOver;
+
 
     [HideInInspector] public float baseRotationSpeed = .5f;
     // Initial rotation speed
@@ -48,6 +50,7 @@ public class rotation : MonoBehaviour
 
 
         transform.Rotate(0f, rotationSpeed, 0f, Space.Self);
+        
     }
 
     
@@ -57,6 +60,11 @@ public class rotation : MonoBehaviour
     //dummy
     public void SpeedUpRotation()
     {
+        if (gameOver.IsGameover)
+        {
+            return;
+        }
+
         // Increase rotation speed
         rotationSpeed += speedIncreaseRate * Time.deltaTime;
 
@@ -66,9 +74,30 @@ public class rotation : MonoBehaviour
 
     public void SlowDownRotation()
     {
+        if (gameOver.IsGameover)
+        {
+            return;
+        }
+
         rotationSpeed -= slowDownRate * Time.deltaTime;
 
         rotationSpeed = Mathf.Clamp(rotationSpeed, minRotationSpeed, maxRotationSpeed);
+    }
+
+    public void SlowDownRotationToZero()
+    {
+        StartCoroutine(SlowMotion());
+    }
+
+    private IEnumerator SlowMotion()
+    {
+        Debug.Log("SLOWDOWN HAS STARTED");
+        while (rotationSpeed > 0)
+        {
+            rotationSpeed -= 0.1f * Time.deltaTime;
+            yield return null;
+            rotationSpeed = Mathf.Max(0, rotationSpeed);
+        }
     }
 
 

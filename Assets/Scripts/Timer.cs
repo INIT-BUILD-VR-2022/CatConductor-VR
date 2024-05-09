@@ -14,19 +14,20 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (timevalue > 0)
+        if (timevalue > 0)
+        {
+            timevalue -= Time.deltaTime;
+        }
+        else
+        {
+            timevalue = 0;
+            if (!GameOverScript.IsGameover)
             {
-                timevalue -= Time.deltaTime;
+                GameOverScript.TriggerGameOverEffects(false);
             }
-            else
-            {
-                timevalue = 0;
-                if (GameOverScript != null)
-                {
-                    GameOverScript.TriggerGameOverEffects(false);
-                }
-            }
-            DisplayTime(timevalue);
+                
+        }
+        DisplayTime(timevalue);
     }
     void DisplayTime(float timetodisplay)
     {
