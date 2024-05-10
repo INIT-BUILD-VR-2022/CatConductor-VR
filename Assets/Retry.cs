@@ -7,6 +7,6 @@ public class Retry : MonoBehaviour
 {
     public void ReloadScene()
     {
-        SceneManager.LoadScene("Main Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
