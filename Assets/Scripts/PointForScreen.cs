@@ -14,7 +14,7 @@ public class PointForScreen : MonoBehaviour
     void FixedUpdate()
     {
         scoreText.text = score.score.ToString();
-        Debug.Log("The score is " + scoreText.text);
+        
 
     }
 }
