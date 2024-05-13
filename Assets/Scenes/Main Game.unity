@@ -11565,6 +11565,36 @@ Transform:
   - {fileID: 3522321607182031182}
   m_Father: {fileID: 6168270220585209188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2138004450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7312055129162445952, guid: f89dfc8d40937504ea2919f4dd31deae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1821119106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!120 &2138004451 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 3602649146558367780, guid: f89dfc8d40937504ea2919f4dd31deae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1821119106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2138004452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6224735690531574901, guid: f89dfc8d40937504ea2919f4dd31deae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1821119106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2140799594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6722503420451360393, guid: 9036c1d52c5addb4f97b2d6938256ef9,
@@ -11585,7 +11615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: {fileID: 2158302285349175024}
   baseRotationSpeed: 0.5
-  rotationSpeed: 0
+  rotationSpeed: 0.5
 --- !u!23 &111902424879592132
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11812,7 +11842,7 @@ MonoBehaviour:
   isProtected: 0
   forcefield: {fileID: 1775681402}
   invincFramesTime: 2
-  immune: 1
+  immune: 0
   trainAnim: {fileID: 1999020825}
   hitAudioSource: {fileID: 281553009}
   hitSound: {fileID: 8300000, guid: 8b45d68041150c94695e201c2a222c20, type: 3}
@@ -19327,9 +19357,9 @@ MonoBehaviour:
   music: {fileID: 8492167369875847603}
   rotation: {fileID: 36926378290154864}
   IsGameover: 0
-  ray: {fileID: 0}
-  LR: {fileID: 0}
-  LV: {fileID: 0}
+  ray: {fileID: 2138004452}
+  LR: {fileID: 2138004451}
+  LV: {fileID: 2138004450}
 --- !u!23 &2166317288540208582
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23959,6 +23989,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainSparks
       objectReference: {fileID: 0}
+    - target: {fileID: 1164280613407690181, guid: 5cc0372dacd318442a39a04494115729,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164280613407690181, guid: 5cc0372dacd318442a39a04494115729,
+        type: 3}
+      propertyPath: rotScript
+      value: 
+      objectReference: {fileID: 36926378290154864}
+    - target: {fileID: 1164280613407690181, guid: 5cc0372dacd318442a39a04494115729,
+        type: 3}
+      propertyPath: brakeSparks
+      value: 
+      objectReference: {fileID: 1676412668}
+    - target: {fileID: 1164280613407690181, guid: 5cc0372dacd318442a39a04494115729,
+        type: 3}
+      propertyPath: trainSparks
+      value: 
+      objectReference: {fileID: 869452953}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28488,7 +28538,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 73b598bb080df754597bdf520b30e8d7, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.279
   m_Pitch: 1
   Loop: 1
