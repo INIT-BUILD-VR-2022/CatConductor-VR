@@ -7,9 +7,9 @@ public class rotation : MonoBehaviour
     public GameOver gameOver;
 
 
-    [HideInInspector] public float baseRotationSpeed = .5f;
+    public float baseRotationSpeed = .5f;
     // Initial rotation speed
-    [HideInInspector] public float rotationSpeed = .5f;
+    public float rotationSpeed = .5f;
 
     // speed increase rate per second
     private float speedIncreaseRate = 0.2f;
@@ -94,7 +94,7 @@ public class rotation : MonoBehaviour
         Debug.Log("SLOWDOWN HAS STARTED");
         while (rotationSpeed > 0)
         {
-            rotationSpeed -= 0.1f * Time.deltaTime;
+            rotationSpeed -= 0.3f * Time.deltaTime;
             yield return null;
             rotationSpeed = Mathf.Max(0, rotationSpeed);
         }
