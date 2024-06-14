@@ -18,7 +18,7 @@ public class Cart_Move : MonoBehaviour
 
     public bool canInput = true;
 
-    // Start is called before the first frame update
+
     void Start()
     {
 
