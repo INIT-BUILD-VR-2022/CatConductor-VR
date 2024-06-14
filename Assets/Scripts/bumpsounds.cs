@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bumpsounds : MonoBehaviour
 {
+    //fluff
     Rigidbody rb;
     AudioSource audio;
     public float hitspeed = 3f;
